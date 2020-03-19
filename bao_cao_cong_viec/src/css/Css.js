@@ -68,7 +68,8 @@ const style = stylesheet({
     handleBar:{
         width:'100%',
         height:'75px',
-        background:'#515064'
+        background:'#515064',
+        display:'flex',
     },
     navigationBar:{
         listStyleType:'none',
@@ -81,7 +82,41 @@ const style = stylesheet({
                 cursor:'pointer'
             }
         }
+    },
+    userImage:{
+        borderRadius:'50%',
+        cursor:'pointer',
+        right:'205px',
+        position:'absolute',
+        top:'5px',
+    },
+    searchBoxHandleBar:{
+        width:'400px',
+        height:'30px',
+        borderRadius:'25px',
+        border:"none",
+        fontSize:'18px',
+        marginTop:'20px',
+        marginLeft:'20px',
+        outline:'none',
+        paddingLeft:'20px',
+        paddingRight:'20px'
+    },
+    userControlDiv:{
+        background:'white',
+        top: '75px',
+        right: '200px',
+        height: '200px',
+        position: 'absolute',
+        width: '200px',
+        boxShadow:'rgba(0, 0, 0, 0.25) 3px 5px 10px',
+        borderRadius:'5px',
+        zIndex:'20'
+    },
+    selectPosition:{
+        width:'500px'
     }
+
     
 })
 

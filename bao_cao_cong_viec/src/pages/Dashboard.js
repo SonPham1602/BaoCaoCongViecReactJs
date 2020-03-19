@@ -1,7 +1,8 @@
 import React from 'react'
 import Style from '../css/Css'
 import Navigation from '../components/navigationBar'
-
+import HandleBar from '../components/handleBar'
+import ReportForm from '../components/formReport'
 
 class Dashboard extends React.Component {
     constructor(props) {
@@ -11,14 +12,13 @@ class Dashboard extends React.Component {
         }
     }
 
-
     render() {
         return (
             <div>
                 <Navigation></Navigation>
                 <div className={Style.rightSlideDashboard}>
-                    <div className={Style.handleBar}></div>
-                    <div></div>
+                    <HandleBar></HandleBar>
+                    <ReportForm></ReportForm>
                 </div>
 
             </div>

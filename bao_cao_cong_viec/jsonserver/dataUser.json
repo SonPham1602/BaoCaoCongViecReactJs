@@ -1,0 +1,59 @@
+{
+    "User": [
+        {
+            "name": "Quoc Phong",
+            "email": "phong@gmail.com",
+            "password": "123",
+            "level": "9"
+        },
+        {
+            "name": "Ngoc Son",
+            "email": "son@gmail.com",
+            "password": "123",
+            "level": "9"
+        },
+        {
+            "name": "Minh Duc",
+            "email": "duc@gmail.com",
+            "password": "123",
+            "level": "1"
+        },
+        {
+            "name": "Thanh Hai",
+            "email": "hai@gmail.com",
+            "password": "123456789",
+            "level": "2"
+        },
+        {
+            "name": "Le Bang",
+            "email": "bang@gmail.com",
+            "password": "123456789",
+            "level": "3"
+        },
+        {
+            "name": "Thang",
+            "email": "thang@gmail.com",
+            "password": "123456789",
+            "level": "4"
+        }
+    ],
+    "Report": [
+        {}
+    ],
+    "DanhSachPhongBan": [
+        {
+            "CongTyAnhDuong": [
+                {
+                    "Phong":[
+                        {
+                            "ten:":"aaaa"
+                        }
+                    ]
+                }
+            ],
+            "CongTyA":[
+
+            ]
+        }
+    ]
+}
