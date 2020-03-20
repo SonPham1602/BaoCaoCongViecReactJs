@@ -1,59 +1,476 @@
 {
     "User": [
         {
-            "name": "Quoc Phong",
-            "email": "phong@gmail.com",
-            "password": "123",
-            "level": "9"
+            "_id": "5e7330600e170003e3646344",
+            "email": "root@gmail.com",
+            "pwd": "000111000111",
+            "phone": "001001001",
+            "avatar": "",
+            "description": "i am gROOT",
+            "level": 0,
+            "createTime": {
+                "$date": "2020-03-12T00:00:00Z"
+            },
+            "updateTime": {
+                "$date": "2020-03-19T00:00:00Z"
+            },
+            "isActive": true,
+            "departmentId": null,
+            "companyId": null,
+            "branchId": null,
+            "role_branch": [],
+            "role_department": []
         },
         {
-            "name": "Ngoc Son",
-            "email": "son@gmail.com",
-            "password": "123",
-            "level": "9"
-        },
-        {
-            "name": "Minh Duc",
-            "email": "duc@gmail.com",
-            "password": "123",
-            "level": "1"
-        },
-        {
-            "name": "Thanh Hai",
-            "email": "hai@gmail.com",
-            "password": "123456789",
-            "level": "2"
-        },
-        {
-            "name": "Le Bang",
-            "email": "bang@gmail.com",
-            "password": "123456789",
-            "level": "3"
-        },
-        {
-            "name": "Thang",
-            "email": "thang@gmail.com",
-            "password": "123456789",
-            "level": "4"
-        }
-    ],
-    "Report": [
-        {}
-    ],
-    "DanhSachPhongBan": [
-        {
-            "CongTyAnhDuong": [
+            "_id":"5e73199d19c745da4ddabcf1",
+            "email": "user1@gmail.com",
+            "pwd": "123456789",
+            "phone": "001001001",
+            "avatar": "",
+            "description": "user no.1",
+            "level": 1,
+            "createTime": {
+                "$date": "2020-03-12T00:00:00Z"
+            },
+            "updateTime": {
+                "$date": "2020-03-19T00:00:00Z"
+            },
+            "isActive": true,
+            "departmentId": null,
+            "companyId": {
+                "$oid": "5e7318775adab12362cb836d"
+            },
+            "branchId": null,
+            "role_branch": [
                 {
-                    "Phong":[
-                        {
-                            "ten:":"aaaa"
-                        }
-                    ]
+                    "$oid": "5e7318a971a59d8cb791a9e6"
+                },
+                {
+                    "$oid": "5e7318ae542eabb6c65c8a89"
                 }
             ],
-            "CongTyA":[
-
+            "role_department": [
+                {
+                    "$oid": "5e7318e16cbc6468f38c0e54"
+                },
+                {
+                    "$oid": "5e7318e54b75b816efc3bc05"
+                },
+                {
+                    "$oid": "5e7318e838665c9122a38efc"
+                }
             ]
+        },
+        {
+            "_id": "5e7319a22977240bcc822302",
+            "email": "user2@gmail.com",
+            "pwd": "123456789",
+            "phone": "001001001",
+            "avatar": "",
+            "description": "user no.2",
+            "level": 1,
+            "createTime": {
+                "$date": "2020-03-12T00:00:00Z"
+            },
+            "updateTime": {
+                "$date": "2020-03-19T00:00:00Z"
+            },
+            "isActive": true,
+            "departmentId": null,
+            "companyId": {
+                "$oid": "5e73189640e5ed2938129872"
+            },
+            "branchId": null,
+            "role_branch": [],
+            "role_department": []
+        },
+        {
+            "_id": "5e7319b0c0fba6e10a85daf3",
+            "email": "user3@gmail.com",
+            "pwd": "123456789",
+            "phone": "001001001",
+            "avatar": "",
+            "description": "user no.3",
+            "level": 2,
+            "createTime": {
+                "$date": "2020-03-12T00:00:00Z"
+            },
+            "updateTime": {
+                "$date": "2020-03-19T00:00:00Z"
+            },
+            "isActive": true,
+            "departmentId": null,
+            "companyId": {
+                "$oid": "5e7318775adab12362cb836d"
+            },
+            "branchId": {
+                "$oid": "5e7318a971a59d8cb791a9e6"
+            },
+            "role_branch": [
+                {
+                    "$oid": "5e7318a971a59d8cb791a9e6"
+                }
+            ],
+            "role_department": [
+                {
+                    "$oid": "5e7318e16cbc6468f38c0e54"
+                },
+                {
+                    "$oid": "5e7318e54b75b816efc3bc05"
+                }
+            ]
+        },
+        {
+            "_id": "5e7319bf93329d1c3e11157c",
+            "email": "user4@gmail.com",
+            "pwd": "123456789",
+            "phone": "001001001",
+            "avatar": "",
+            "description": "user no.4",
+            "level": 3,
+            "createTime": {
+                "$date": "2020-03-12T00:00:00Z"
+            },
+            "updateTime": {
+                "$date": "2020-03-19T00:00:00Z"
+            },
+            "isActive": true,
+            "departmentId": {
+                "$oid": "5e7318e16cbc6468f38c0e54"
+            },
+            "companyId": {
+                "$oid": "5e7318775adab12362cb836d"
+            },
+            "branchId": {
+                "$oid": "5e7318a971a59d8cb791a9e6"
+            },
+            "role_branch": [],
+            "role_department": [
+                {
+                    "$oid": "5e7318e16cbc6468f38c0e54"
+                }
+            ]
+        },
+        {
+            "_id": "5e7319d306d719180eac3590",
+            "email": "user5@gmail.com",
+            "pwd": "123456789",
+            "phone": "001001001",
+            "avatar": "",
+            "description": "user no.5 - super admin",
+            "level": 4,
+            "createTime": {
+                "$date": "2020-03-12T00:00:00Z"
+            },
+            "updateTime": {
+                "$date": "2020-03-19T00:00:00Z"
+            },
+            "isActive": true,
+            "companyId":"5e7318775adab12362cb836d",
+            "branchId":"5e7318a971a59d8cb791a9e6",
+            "departmentId":"5e7318e16cbc6468f38c0e54",
+            "role_branch": [],
+            "role_department": []
+        },
+        {
+            "_id": "5e7319ec3fa6dd9fdcab53cc",
+            "email": "user6@gmail.com",
+            "pwd": "123456789",
+            "phone": "001001001",
+            "avatar": "",
+            "description": "user no.6",
+            "level": 9,
+            "createTime":"2020-03-12T00:00:00Z",
+            "updateTime":"2020-03-19T00:00:00Z",
+            "isActive": true,
+            "companyId":"5e7318775adab12362cb836d",
+            "branchId":"5e7318a971a59d8cb791a9e6",
+            "departmentId":"5e7318e16cbc6468f38c0e54",
+            "role_branch": [],
+            "role_department": []
+        },
+        {
+            "_id": "5e7319f5ff458814d4008d7a",
+            "email": "user7@gmail.com",
+            "pwd": "123456789",
+            "phone": "001001001",
+            "avatar": "",
+            "description": "user no.7",
+            "level": 9,
+            "createTime":"2020-03-12T00:00:00Z",
+            "updateTime":"2020-03-19T00:00:00Z",
+            "isActive": true,
+            "companyId":"5e7318775adab12362cb836d",
+            "branchId":"5e7318a971a59d8cb791a9e6",
+            "departmentId":"5e7318e16cbc6468f38c0e54",
+            "role_branch": [],
+            "role_department": []
+        },
+        {
+            "_id": "5e7319fffc9cbef50ced4d4c",
+            "email": "user8@gmail.com",
+            "pwd": "123456789",
+            "phone": "001001001",
+            "avatar": "",
+            "description": "user no.8",
+            "level": 9,
+            "createTime":"2020-03-12T00:00:00Z",
+            "updateTime":"2020-03-19T00:00:00Z",
+            "isActive": true,
+            "companyId":"5e7318775adab12362cb836d",
+            "branchId":"5e7318a971a59d8cb791a9e6",
+            "departmentId": "5e7318e16cbc6468f38c0e54",
+            "role_branch": [],
+            "role_department": []
+        },
+        {
+            "_id": "5e731a099b903ef2057bcd9e",
+            "email": "user9@gmail.com",
+            "pwd": "123456789",
+            "phone": "001001001",
+            "avatar": "",
+            "description": "user no.9",
+            "level": 9,
+            "createTime":"2020-03-12T00:00:00Z",
+            "updateTime":"2020-03-19T00:00:00Z",
+            "isActive": true,
+            "departmentId": null,
+            "companyId": null,
+            "branchId": null,
+            "role_branch": [],
+            "role_department": []
+        },
+        {
+            "_id": "5e731a113c6af94b96c8bdb6",
+            "email": "user10@gmail.com",
+            "pwd": "123456789",
+            "phone": "001001001",
+            "avatar": "",
+            "description": "user no.10",
+            "level": 9,
+            "createTime":"2020-03-12T00:00:00Z",
+            "updateTime":"2020-03-19T00:00:00Z",
+            "isActive": true,
+            "departmentId": null,
+            "companyId": null,
+            "branchId": null,
+            "role_branch": [],
+            "role_department": []
+        },
+        {
+            "_id": "5e731a1656379e0bf9e45149",
+            "email": "user11@gmail.com",
+            "pwd": "123456789",
+            "phone": "001001001",
+            "avatar": "",
+            "description": "user no.11",
+            "level": 9,
+            "createTime": {
+                "$date": "2020-03-12T00:00:00Z"
+            },
+            "updateTime": {
+                "$date": "2020-03-19T00:00:00Z"
+            },
+            "isActive": true,
+            "departmentId": null,
+            "companyId": null,
+            "branchId": null,
+            "role_branch": [],
+            "role_department": []
+        },
+        {
+            "_id": "5e731a1b951d3e59e96d88c0",
+            "email": "user12@gmail.com",
+            "pwd": "123456789",
+            "phone": "001001001",
+            "avatar": "",
+            "description": "user no.12",
+            "level": 9,
+            "createTime": "2020-03-12T00:00:00Z",
+            "updateTime": {
+                "$date": "2020-03-19T00:00:00Z"
+            },
+            "isActive": true,
+            "departmentId": null,
+            "companyId": null,
+            "branchId": null,
+            "role_branch": [],
+            "role_department": []
+        },
+        {
+            "_id": "5e731a209242865e1fb1d9ea",
+            "email": "user13@gmail.com",
+            "pwd": "123456789",
+            "phone": "001001001",
+            "avatar": "",
+            "description": "user no.13",
+            "level": 9,
+            "createTime": {
+                "$date": "2020-03-12T00:00:00Z"
+            },
+            "updateTime": {
+                "$date": "2020-03-19T00:00:00Z"
+            },
+            "isActive": true,
+            "departmentId": null,
+            "companyId": null,
+            "branchId": null,
+            "role_branch": [],
+            "role_department": []
+        }
+    ],
+    "Department": [
+        {
+            "_id":"5e7318e16cbc6468f38c0e54",
+            "name": "Phòng Nghiên cứu - Chi nhánh 1 - Công ty A",
+            "description": "Mô tả thông tin chi nhánh 1 - công ty A",
+            "createTime":"2020-03-12T00:00:00Z",
+            "updateTime":"2020-03-19T00:00:00Z",
+            "companyId":"5e7318775adab12362cb836d",
+            "branchId":"5e7318a971a59d8cb791a9e6"
+        },
+        {
+            "_id": "5e7318e54b75b816efc3bc05",
+            "name": "Phòng Kinh doanh - Chi nhánh 1 - Công ty A",
+            "description": "Mô tả thông tin chi nhánh 1 - công ty A",
+            "createTime":"2020-03-12T00:00:00Z",
+            "updateTime":"2020-03-19T00:00:00Z",
+            "companyId":"5e7318775adab12362cb836d",
+            "branchId":"5e7318a971a59d8cb791a9e6"
+        },
+        {
+            "_id":"5e7318e838665c9122a38efc",
+            "name": "Phòng Kỹ thuật - Chi nhánh 2 - Công ty A",
+            "description": "Mô tả thông tin công ty C",
+            "createTime":"2020-03-12T00:00:00Z",
+            "updateTime":"2020-03-19T00:00:00Z",
+            "companyId":"5e7318775adab12362cb836d",
+            "branchId":"5e7318ae542eabb6c65c8a89"
+        },
+        {
+            "_id":"5e7318eddce33ac37f39d7da",
+            "name": "Phòng Nhân sự - Chi nhánh 1 - Công ty C",
+            "description": "Mô tả thông tin công ty D",
+            "createTime":"2020-03-12T00:00:00Z",
+            "updateTime":"2020-03-19T00:00:00Z",
+            "companyId":"5e73189640e5ed2938129872",
+            "branchId":"5e7318b3f848b2bb555b275c"
+        }
+    ],
+    "Company": [
+        {
+            "_id": "5e7318775adab12362cb836d",
+            "name": "Công ty A",
+            "description": "Mô tả thông tin công ty A",
+            "createTime":"2020-03-12T00:00:00Z",
+            "updateTime":"2020-03-19T00:00:00Z"
+        },
+        {
+            "_id":"5e73188d076ad039a7da2e7d",
+            "name": "Công ty B",
+            "description": "Mô tả thông tin công ty B",
+            "createTime":"2020-03-12T00:00:00Z",
+            "updateTime":"2020-03-19T00:00:00Z"
+        },
+        {
+            "_id":"5e73189640e5ed2938129872",
+            "name": "Công ty C",
+            "description": "Mô tả thông tin công ty C",
+            "createTime":"2020-03-12T00:00:00Z",
+            "updateTime":"2020-03-19T00:00:00Z"
+        },
+        {
+            "_id": "5e73189b36762f3086719a21",
+            "name": "Công ty D",
+            "description": "Mô tả thông tin công ty D",
+            "createTime":  "2020-03-12T00:00:00Z",
+            "updateTime":"2020-03-19T00:00:00Z"
+        }
+    ],
+    "Team": [
+        {
+            "_id": "5e7334ca300111d297fe0cab",
+            "name": "Bộ 3 khó đỡ - Phòng Nghiên cứu - Chi Nhánh 1 - Công ty A",
+            "createTime": "2020-03-12T00:00:00Z",
+            "updateTime": "2020-03-19T00:00:00Z",
+            "manager": [
+                "5e7319d306d719180eac3590"
+            ],
+            "member": [
+                "5e7319ec3fa6dd9fdcab53cc",
+                "5e7319f5ff458814d4008d7a",
+                "5e7319fffc9cbef50ced4d4c"
+            ],
+            "companyId":"5e7318775adab12362cb836d",
+            "branchId":"5e7318a971a59d8cb791a9e6",
+            "departmentId":"5e7318e16cbc6468f38c0e54"
+        },
+        {
+            "_id": "5e7334df09c9ea39d60d2f9a",
+            "name": "Hội cao tuổi - Phòng Kinh doanh - Chi nhánh 1 - Công ty A",
+            "createTime":"2020-03-12T00:00:00Z",
+            "updateTime": "2020-03-19T00:00:00Z",
+            "manager": [],
+            "member": [],
+            "companyId":"5e7318775adab12362cb836d",
+            "branchId": "5e7318a971a59d8cb791a9e6",
+            "departmentId": "5e7318e54b75b816efc3bc05"
+        },
+        {
+            "_id":"5e7334e5a8a0c945edec337e",
+            "name": "Nhóm đại thúc - Phòng Kỹ thuật - Chi nhánh 2 - Công ty A",
+            "createTime":"2020-03-12T00:00:00Z",
+            "updateTime":"2020-03-19T00:00:00Z",
+            "manager": [],
+            "member": [],
+            "companyId":"5e7318775adab12362cb836d",
+            "branchId": "5e7318ae542eabb6c65c8a89",
+            "departmentId":"5e7318e838665c9122a38efc"
+        },
+        {
+            "_id":"5e7334ee60b2f5bbb950bac5",
+            "name": "Nhóm 3 con hổ con - Phòng Nhân sự - Chi nhánh 1 - Công ty C",
+            "createTime": "2020-03-12T00:00:00Z",
+            "updateTime":"2020-03-19T00:00:00Z",
+            "manager": [],
+            "member": [],
+            "companyId":"5e73189640e5ed2938129872",
+            "branchId": "5e7318b3f848b2bb555b275c",
+            "departmentId": "5e7318eddce33ac37f39d7da"
+        }
+    ],
+    "Branch": [
+        {
+            "_id": "5e7318a971a59d8cb791a9e6",
+            "name": "Chi nhánh 1 - Công ty A",
+            "description": "Mô tả thông tin chi nhánh 1 - công ty A",
+            "createTime": "2020-03-12T00:00:00Z",
+            "updateTime": "2020-03-19T00:00:00Z",
+            "companyId": "5e7318775adab12362cb836d"
+        },
+        {
+            "_id": "5e7318ae542eabb6c65c8a89",
+            "name": "Chi nhánh 2 - Công ty A",
+            "description": "Mô tả thông tin chi nhánh 1 - công ty A",
+            "createTime": "2020-03-12T00:00:00Z",
+            "updateTime": "2020-03-19T00:00:00Z",
+            "companyId": "5e7318775adab12362cb836d"
+        },
+        {
+            "_id": "5e7318b3f848b2bb555b275c",
+            "name": "Chi nhánh 1 - Công ty C",
+            "description": "Mô tả thông tin chi nhánh 1 - công ty C",
+            "createTime": "2020-03-12T00:00:00Z",
+            "updateTime": "2020-03-19T00:00:00Z",
+            "companyId": "5e73189640e5ed2938129872"
+        },
+        {
+            "_id": "5e7318b8bccc2eef2ab198c0",
+            "name": "Chi nhánh 1 - Công ty D",
+            "description": "Mô tả thông tin chi nhánh - công ty D",
+            "createTime": "2020-03-12T00:00:00Z",
+            "updateTime": "2020-03-19T00:00:00Z",
+            "companyId": "5e73189b36762f3086719a21"
         }
     ]
 }

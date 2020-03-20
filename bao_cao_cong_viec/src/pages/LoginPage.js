@@ -1,18 +1,21 @@
 import React from "react";
 import Style from '../css/Css'
-import axios from 'axios'
 import {FaRegUser,FaLock} from 'react-icons/fa'
 import { Link,Redirect} from "react-router-dom";
+import AuthService from '../share/authservice'
+
 class LoginPage extends React.Component {
     constructor(props)
     {
-        super(props)
+        super(props);
+        var username = localStorage.getItem("username");        
         this.state = {
             user:{
-                email:"",
-                password:""
-            },
-            goDashboard:false,
+                username: username,
+                password: ""
+            },       
+            goDashboard: AuthService.checkAuthorised(),
+            goRegister: false
         }
         this.onClickLoginButton = this.onClickLoginButton.bind(this)
         this.onChangeEmail = this.onChangeEmail.bind(this)
@@ -25,7 +28,7 @@ class LoginPage extends React.Component {
         this.setState(prevState=>({
             user:{
                 ...prevState.user,
-                email:data
+                username:data
             }
         }))
     }
@@ -40,22 +43,12 @@ class LoginPage extends React.Component {
         }))
     }
     onClickLoginButton(){
-        axios.get("http://localhost:4000/User",{
-            params:{
-                email:this.state.user.email,
-                password:this.state.user.password
-            }
-        }).then((response)=>{
-            console.log("data",response.data)
-            if(response.data.length !== 0)
-            {
-                this.setState({
-                    goDashboard:true
-                })
-            }
-        
-            
-        })
+        var result = AuthService.login_Ver1(this.state.user.username, this.state.user.password);
+        result.then(data => {
+            this.setState({
+                goDashboard: data
+            })
+        })      
     }
     onClickCreateNewAccount()
     {

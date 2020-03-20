@@ -56,6 +56,7 @@ const style = stylesheet({
         boxShadow: 'rgba(0, 0, 0, 0.25) 3px 5px 10px',
     },
     rightSlideDashboard:{
+    
         width: '100%',
         background: 'white',
         position: 'fixed',
@@ -73,14 +74,22 @@ const style = stylesheet({
     },
     navigationBar:{
         listStyleType:'none',
-
+        padding:'0px',
+        overflow:'hidden',
         $nest:{
             '& li':{
                 marginTop:'10px',
                 fontSize:'15px',
                 textAlign:'left',
-                cursor:'pointer'
+                cursor:'pointer',
+                width:"100%",
+                marginLeft:'0px',
+                padding:'10px'
+            },
+            '& :hover':{
+                background:'#D4D4D4'
             }
+
         }
     },
     userImage:{
@@ -99,7 +108,7 @@ const style = stylesheet({
         marginTop:'20px',
         marginLeft:'20px',
         outline:'none',
-        paddingLeft:'20px',
+        paddingLeft:'40px',
         paddingRight:'20px'
     },
     userControlDiv:{
@@ -115,9 +124,24 @@ const style = stylesheet({
     },
     selectPosition:{
         width:'500px'
-    }
+    },
+    richEditor:{
+        textAlign:'left',
+        // marginRight:'200px',
+        fontSize:'20px',
+        height: '100%'
+    },
+    titlePlaceToSent:{
+        width:"500px",
+        borderRadius:'5px',
+        height:'30px',
+        border:'1px solid gray',
+        marginLeft: '20px',
+        paddingLeft:'10px',
+        outline:'none'
+    },
+
 
     
 })
-
 export default style
