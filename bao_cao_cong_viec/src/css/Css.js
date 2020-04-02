@@ -46,35 +46,45 @@ const style = stylesheet({
         marginTop: '10px'
     },
     leftSlideDashboard:{
-        width: '200px',
-        background: 'white',
+        marginTop: '75px',
+        marginBottom: '10px',
+        height: '100%',
+        backgroundColor: '#f7f7f7',
+        borderRight: '1px solid #ececec',
         position: 'fixed',
-        top: '0',
-        bottom: '0',
-        left: '0',
-        zIndex: '2',
-        boxShadow: 'rgba(0, 0, 0, 0.25) 3px 5px 10px',
+        width: '15%',
     },
     rightSlideDashboard:{
     
         width: '100%',
         background: 'white',
-        position: 'fixed',
+        //position: 'fixed',
         top: '0',
         bottom: '0',
         right: '0',
         zIndex: '1',
-        transform:'translateX(200px)',
+        // transform:'translateX(200px)',
     },
     handleBar:{
         width:'100%',
         height:'75px',
-        background:'#515064',
+        background:'#3F51B5',
         display:'flex',
+        position: 'fixed',
+        zIndex:10,
     },
+
+    aHolver: {
+        $nest:{
+            '& :hover':{
+                background:'#D4D4D4'
+            }
+        }
+    },
+
     navigationBar:{
         listStyleType:'none',
-        padding:'0px',
+        // padding:'0px',
         overflow:'hidden',
         $nest:{
             '& li':{
@@ -84,20 +94,20 @@ const style = stylesheet({
                 cursor:'pointer',
                 width:"100%",
                 marginLeft:'0px',
-                padding:'10px'
+                padding:'10px',
             },
-            '& :hover':{
-                background:'#D4D4D4'
-            }
+            // '& :hover':{
+            //     background:'#D4D4D4'
+            // }
 
         }
     },
     userImage:{
         borderRadius:'50%',
         cursor:'pointer',
-        right:'205px',
+        right:'10px',
         position:'absolute',
-        top:'5px',
+        top:'7px',
     },
     searchBoxHandleBar:{
         width:'400px',
@@ -106,21 +116,22 @@ const style = stylesheet({
         border:"none",
         fontSize:'18px',
         marginTop:'20px',
-        marginLeft:'20px',
+        marginLeft:'250px',
         outline:'none',
         paddingLeft:'40px',
         paddingRight:'20px'
     },
     userControlDiv:{
-        background:'white',
-        top: '75px',
-        right: '200px',
+        background: 'white',
+        borderRadius: '5px',
+        boxShadow: 'rgba(0, 0, 0, 0.25) 3px 5px 10px',
         height: '200px',
         position: 'absolute',
+        right: '10px',
+        top: '75px',
         width: '200px',
-        boxShadow:'rgba(0, 0, 0, 0.25) 3px 5px 10px',
-        borderRadius:'5px',
-        zIndex:'20'
+        zIndex: '20',
+        border: '1px solid darkgray',
     },
     selectPosition:{
         width:'500px'
@@ -129,19 +140,43 @@ const style = stylesheet({
         textAlign:'left',
         // marginRight:'200px',
         fontSize:'20px',
-        height: '100%'
+        height: '100%',
+
     },
     titlePlaceToSent:{
-        width:"500px",
-        borderRadius:'5px',
-        height:'30px',
-        border:'1px solid gray',
+        border: '1px solid gray',
+        borderRadius: '5px',
+        height: '30px',
         marginLeft: '20px',
-        paddingLeft:'10px',
-        outline:'none'
+        outline: 'none',
+        paddingLeft: '10px',
+        width: '500px',
+        margin: '2px',
+    },  
+    contentRight:{
+        marginTop:'75px',
+        //width: '80%',
+        background: 'white',
+        //position: 'fixed',
+        // top: '100px',
+        // bottom: '75px',
+        //margin: '20px',
+        //left: '0px',
+        zIndex: '1',
+        // backgroundColor: 'blue',
+        //  transform:'translateX(200px)',
+        // paddingLeft:'40px',
     },
-
-
-    
+    selectPageStyle: {
+        margin: '0',
+        padding: '10px',
+        list_style: 'none',
+        position: 'relative',
+        $nest:{
+            '& :hover':{
+                background:'#D4D4D4'
+            }
+        }
+    } 
 })
 export default style

@@ -35,13 +35,21 @@ class handleBar extends React.Component {
         {
             return <Redirect to='/'/>
         }
+        const logoHeader = {
+            position: 'absolute',
+            left: "10px",
+            top: "10px"
+        }
         const iconSeachBar = {
             position: 'absolute',
-            left: "30px",
+            left: "270px",
             top: "30px"
         }
         return (
-            <div className={Style.handleBar}>
+            <div className={Style.handleBar}>               
+                <div style={logoHeader}>
+                    <img src="/icon/logo.png" width='200px'></img>
+                </div>
                 <div>
                     <div>
                         <input className={Style.searchBoxHandleBar}></input>

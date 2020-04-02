@@ -8,18 +8,31 @@ class LoginPage extends React.Component {
     constructor(props)
     {
         super(props);
-        var username = localStorage.getItem("username");        
+        var username = localStorage.getItem("username");   
+        var password = localStorage.getItem("password");
+        var savepass = true; 
+        if(username === undefined || username === null || username === ""){
+            username = "";
+        }
+        if(password === undefined || password === null || password === ""){
+            password = "";
+            savepass = false;
+        }            
+           
         this.state = {
             user:{
                 username: username,
-                password: ""
+                password: password,
+                savepass: savepass
             },       
             goDashboard: AuthService.checkAuthorised(),
             goRegister: false
         }
+        console.log(this.state);
         this.onClickLoginButton = this.onClickLoginButton.bind(this)
         this.onChangeEmail = this.onChangeEmail.bind(this)
         this.onChangePassword = this.onChangePassword.bind(this)
+        this.onChangeSavePass = this.onChangeSavePass.bind(this)
         this.onClickCreateNewAccount = this.onClickCreateNewAccount.bind(this)
     }
     onChangeEmail(event)
@@ -42,8 +55,17 @@ class LoginPage extends React.Component {
             }
         }))
     }
+    onChangeSavePass(event)
+    {
+        this.setState(prevState=>({
+            user:{
+                ...prevState.user,
+                savepass: !prevState.user.savepass
+            }
+        }))
+    }
     onClickLoginButton(){
-        var result = AuthService.login_Ver1(this.state.user.username, this.state.user.password);
+        var result = AuthService.login(this.state.user.username, this.state.user.password, this.state.user.savepass);
         result.then(data => {
             this.setState({
                 goDashboard: data
@@ -65,9 +87,10 @@ class LoginPage extends React.Component {
             cursor: 'pointer',
         }
         if(goDashboard===true){
-            return <Redirect to='/dashboard'/>
+            return <Redirect to='/home'/>
         }
         else{
+            console.log(this.state.user);
             return (
                 <div>
                     <div>
@@ -78,15 +101,15 @@ class LoginPage extends React.Component {
                     </div>
                     <div>
                         <FaRegUser className={Style.iconStyle}></FaRegUser>
-                        <input onChange={this.onChangeEmail}  placeholder="Email" type='text' className={Style.formControlStyle}></input>
+                        <input value={this.state.user.username} onChange={this.onChangeEmail}  placeholder="Email" type='text' className={Style.formControlStyle}></input>
                     </div>
                     <div>
                         <FaLock className={Style.iconStyle} ></FaLock>
-                        <input  onChange={this.onChangePassword}  placeholder="Password" type='password' className={Style.formControlStyle}></input>
+                        <input value={this.state.user.password} onChange={this.onChangePassword}  placeholder="Password" type='password' className={Style.formControlStyle}></input>
                     </div>
                     <div className={Style.rememberPasswordDivStyle}>
                         <div>
-                            <input type='checkbox'></input> 
+                            <input checked={this.state.user.savepass} onChange={this.onChangeSavePass} type='checkbox'></input> 
                             <label>Nhớ mật khẩu</label>
                         </div>
                         <div>

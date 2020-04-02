@@ -3,16 +3,20 @@ import axios from 'axios'
 import Global from '../share/global'
 
 export default class AuthSerice extends React.Component {
-    static login(username, password) {
+    static login(username, password, savepass) {
         var req = {
-            UserName: username,
-            Pwd: password
+            email: username,
+            pwd: password
         };
-        return axios.post(Global.url_auth + 'api/Auth/Login', req).then((response)=>{
-            if(response.data.Status === 1)
+        return axios.post(Global.url_auth + 'api/author/Login', req).then((response)=>{
+            if(response.data.status === 1)
             {
                 localStorage.setItem("username", username);
-                localStorage.setItem("token", response.data.Token);
+                localStorage.setItem("token", response.data.token);
+                if(savepass)
+                    localStorage.setItem("password", password);
+                else
+                localStorage.removeItem("password");
                 return true;
             }
             else{
@@ -22,39 +26,19 @@ export default class AuthSerice extends React.Component {
         })
     }
 
-    static login_Ver1(username, password) {
-        var req = {
-            email: username,
-            password: password
-        };
-        return axios.get(Global.url_auth + 'User',{params:req}).then((response)=>{
-            //if(response.data.Status === 1)
-           // {
-                localStorage.setItem("username", username);
-                localStorage.setItem("token", 'tesst');
-               // localStorage.setItem("token", response.data.Token);
-                return true;
-           //// }
-           // else{
-            //    alert("Sai username hoặc pass")
-            //    return false;
-          //  }           
-        })
-    }
-
     static logout() {
-        var headers = {
-            'Content-Type': 'application/json',
-            'token': localStorage.getItem("token")
-        }
-        return axios.get(Global.url_auth + 'api/Auth/Logout', {
-            headers: headers
-        }).then((response)=>{
-                localStorage.removeItem("username");
+        // var headers = {
+        //     'Content-Type': 'application/json',
+        //     'token': localStorage.getItem("token")
+        // }
+        // return axios.get(Global.url_auth + 'api/Auth/Logout', {
+        //     headers: headers
+        // }).then((response)=>{
                 localStorage.removeItem("token");
+                window.location.assign("/");
                 return true;
-            }
-        )
+        //     }
+        // )
     }
 
     static checkAuthorised() {
@@ -63,7 +47,6 @@ export default class AuthSerice extends React.Component {
         if(token === null || token === undefined || token === ""){
           ressult = false; 
         }  
-        console.log(ressult)
         return ressult;   
     }  
 }

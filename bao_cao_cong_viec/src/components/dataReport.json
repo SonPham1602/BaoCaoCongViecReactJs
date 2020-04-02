@@ -1,0 +1,72 @@
+{
+    "reports": [
+        {
+            "seens": [],
+            "title": "Báo cáo ngày 24/3/2020",
+            "description": "Báo cáo ngày",
+            "updateTime": "2020-03-24T03:22:00.176Z",
+            "createTime": "2020-03-24T03:22:00.177Z",
+            "company": {
+                "name": "Công ty TNHH Tý bể bóng"
+            },
+            "branch": {
+                "name": "Tý bể bóng 1"
+            },
+            "department": {
+                "name": "Phòng chế bóng"
+            },
+            "userSeen": [],
+            "authorInfo": {
+                "name": "Nhân viên 1",
+                "avatar": "bcdf6732129ae8839ca552990206a74b.png"
+            },
+            "id": "5e797cd8166b5c59a86709f3"
+        },
+        {
+            "seens": [],
+            "title": "Báo cáo ngày 24/3/2020",
+            "description": "Báo cáo ngày",
+            "updateTime": "2020-03-24T03:22:00.176Z",
+            "createTime": "2020-03-24T03:22:00.177Z",
+            "company": {
+                "name": "Công ty TNHH Tý bể bóng"
+            },
+            "branch": {
+                "name": "Tý bể bóng 1"
+            },
+            "department": {
+                "name": "Phòng chế bóng"
+            },
+            "userSeen": [],
+            "authorInfo": {
+                "name": "Nhân viên 1",
+                "avatar": "bcdf6732129ae8839ca552990206a74b.png"
+            },
+            "id": "5e797cd8166b5c59a86709f3"
+        },
+        {
+            "seens": [],
+            "title": "Báo cáo ngày 24/3/2020",
+            "description": "Báo cáo ngày",
+            "updateTime": "2020-03-24T03:22:00.176Z",
+            "createTime": "2020-03-24T03:22:00.177Z",
+            "company": {
+                "name": "Công ty TNHH Tý bể bóng"
+            },
+            "branch": {
+                "name": "Tý bể bóng 1"
+            },
+            "department": {
+                "name": "Phòng chế bóng"
+            },
+            "userSeen": [],
+            "authorInfo": {
+                "name": "Nhân viên 1",
+                "avatar": "bcdf6732129ae8839ca552990206a74b.png"
+            },
+            "id": "5e797cd8166b5c59a86709f3"
+        }
+    ],
+    "description": "OK",
+    "status": 1
+}
