@@ -84,6 +84,13 @@ class ApiService {
   ////////REPORT/////////////////////////////////////////
 
   // Ham nay xem  cac bao cao cua cap duoi
+  static UpdateReport(updateReport)
+  {
+    return this.PUT("api/reports/updateReport",updateReport).then(data=>data)
+      .catch()
+  }
+
+
   static GetReportCanRead()
   {
     return this.POST('api/reports/getReports',{
@@ -91,8 +98,8 @@ class ApiService {
       "branchId": null,
       "departmentId": null,
       "teamId": "",
-      "beginTime": "2020-04-02T04:01:43.959Z",
-      "endTime": "2020-04-02T04:01:43.959Z",
+      "beginTime": "2020-03-02T04:01:43.959Z",
+      "endTime": "2020-05-02T04:01:43.959Z",
       "startIndex": 0,
       "limit": 0
     }).then(data=>data)

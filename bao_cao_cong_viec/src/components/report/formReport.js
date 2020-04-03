@@ -14,7 +14,7 @@ class ReportForm extends React.Component {
         //mode=sent la gui bao cao
         //mode=view la hien thi bao cao
         //mode=edit la co the sua bao cao
-        var {content,title,desciption,mode} = this.props
+        var {content,title,desciption,mode,updateReportId,reportInfo} = this.props
         console.log(mode)
         if(mode === undefined)
         {
@@ -38,12 +38,15 @@ class ReportForm extends React.Component {
             title: title,
             content: content,
             desciption: desciption,
-            modeView:mode
+            modeView:mode,
+            updateReportId:updateReportId,
+            reportInfo:reportInfo
         } // You can also pass a Quill Delta here
         this.handleChangeTitle = this.handleChangeTitle.bind(this)
         this.handleChangeContent = this.handleChangeContent.bind(this)
         this.handleChangeDesciption = this.handleChangeDesciption.bind(this)
         this.postReport = this.postReport.bind(this)
+        this.updateReport = this.updateReport.bind(this)
     }
     
     handleChangeContent(value) {
@@ -77,6 +80,32 @@ class ReportForm extends React.Component {
         'list', 'bullet', 'indent',
         'link', 'image', 'color', 'align', 'font', 'background'
     ]
+
+    updateReport()
+    {
+        ApiService.GetUserInfor().then(req=>
+            {
+                const userId = req.data.user._id
+                var reportData= {
+                    "_id": this.state.updateReportId,
+                    "title": this.state.title,
+                    "description":this.state.desciption,
+                    "content": this.state.content,
+                    "author":userId
+                }
+                ApiService.UpdateReport(reportData).then(rep=>{
+                    if(rep.status===200)
+                    {
+                        alert("Cập nhật cáo thành công")
+                    }
+                    else
+                    {
+                        alert("Cập nhật báo thất bại")
+                    }
+                })
+            })
+    }
+
     postReport() {
         if(this.state.title==="")
         {
@@ -145,21 +174,23 @@ class ReportForm extends React.Component {
             }
             else if(this.state.modeView === 'edit')
             {
-                return  <button onClick={this.postReport} style={postButton}>
-                <label>
-                    Sửa báo cáo
-                </label>
-            </button>
+                return  <button onClick={this.updateReport} style={postButton}>
+                            <label>
+                                Sửa báo cáo
+                            </label>
+                        </button>
             }
         }
         
         return (
-            <div style={{ height: '100%', width: '100%' }}>
+            <div style={{ height: '110%', width: '100%' }}>
+                {this.state.modeView==='sent' && <h3>Gửi báo cáo</h3>}
                 <Row className='p-0 m-0' >
                     <Col className='p-0 m-0' lg='1'>
                         <div style={{ float: 'left', marginTop: '10px',textAlign:"left" }}>
                             <p>Nhập tiêu đề:</p>
                             <p>Nhập mô tả:</p>
+                            {this.state.modeView==='edit' && <p>Thời gian gửi:</p>}
                         </div>
 
                     </Col>
@@ -168,6 +199,7 @@ class ReportForm extends React.Component {
                             <input value={this.state.title} onChange={this.handleChangeTitle} className={Style.titlePlaceToSent} ></input>
                             <br></br>
                             <input value={this.state.desciption} onChange={this.handleChangeDesciption} className={Style.titlePlaceToSent} ></input>
+                            {this.state.modeView==='edit' && <p>{this.state.reportInfo.createTime}</p>}
                         </div>
                     </Col>
                 </Row>

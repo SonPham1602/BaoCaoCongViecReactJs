@@ -52,7 +52,7 @@ const style = stylesheet({
         backgroundColor: '#f7f7f7',
         borderRight: '1px solid #ececec',
         position: 'fixed',
-        width: '15%',
+        width: '16%',
     },
     rightSlideDashboard:{
     
@@ -154,7 +154,7 @@ const style = stylesheet({
         margin: '2px',
     },  
     contentRight:{
-        marginTop:'75px',
+        marginTop:'85px',
         //width: '80%',
         background: 'white',
         //position: 'fixed',
@@ -162,6 +162,7 @@ const style = stylesheet({
         // bottom: '75px',
         //margin: '20px',
         //left: '0px',
+        paddingRight:'10px',
         zIndex: '1',
         // backgroundColor: 'blue',
         //  transform:'translateX(200px)',

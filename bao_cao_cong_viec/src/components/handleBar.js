@@ -1,7 +1,7 @@
 import React from 'react'
 import Style from '../css/Css'
 import { FaSearch } from 'react-icons/fa'
-import { Redirect} from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import ApiService from '../share/apiservice';
 import AuthService from '../share/authservice'
 
@@ -13,7 +13,10 @@ class handleBar extends React.Component {
             logOut: !AuthService.checkAuthorised()
         }
         this.onClickUserButton = this.onClickUserButton.bind(this)
-        this.onLogout = this.onLogout.bind(this)       
+        this.closeUserButton = this.closeUserButton.bind(this)
+        this.onLogout = this.onLogout.bind(this)
+        this.setWrapperRef = this.setWrapperRef.bind(this);
+        this.handleClickOutside = this.handleClickOutside.bind(this);
     }
     onClickUserButton() {
         this.setState({
@@ -21,19 +24,46 @@ class handleBar extends React.Component {
         })
     }
 
-    onLogout(){
+    closeUserButton() {
+        this.setState({
+            showUserControl: false
+        })
+    }
+
+    onLogout() {
         var result = AuthService.logout();
         result.then(data => {
             this.setState({
                 logOut: data
             })
-        })   
+        })
+    }
+    componentDidMount() {
+        document.addEventListener('mousedown', this.handleClickOutside);
+    }
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleClickOutside);
+    }
+
+    /**
+     * Set the wrapper ref
+     */
+    setWrapperRef(node) {
+        this.wrapperRef = node;
+    }
+
+    /**
+     * Alert if clicked on outside of element
+     */
+    handleClickOutside(event) {
+        if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+            this.closeUserButton()
+        }
     }
 
     render() {
-        if(this.state.logOut)
-        {
-            return <Redirect to='/'/>
+        if (this.state.logOut) {
+            return <Redirect to='/' />
         }
         const logoHeader = {
             position: 'absolute',
@@ -46,7 +76,7 @@ class handleBar extends React.Component {
             top: "30px"
         }
         return (
-            <div className={Style.handleBar}>               
+            <div className={Style.handleBar}>
                 <div style={logoHeader}>
                     <img src="/icon/logo.png" width='200px'></img>
                 </div>
@@ -58,8 +88,9 @@ class handleBar extends React.Component {
 
                 </div>
 
-                <div >
-                    <img src="/icon/user.png" className={Style.userImage} width='60px' onClick={this.onClickUserButton}></img>
+                <div onclick>
+                    <img ref={this.setWrapperRef} src="/icon/user.png" className={Style.userImage} width='60px'
+                        onClick={this.onClickUserButton}></img>
                     {this.state.showUserControl && <div className={Style.userControlDiv}>
                         <ul>
                             <li>Quản lý tài khoản</li>

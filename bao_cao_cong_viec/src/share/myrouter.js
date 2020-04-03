@@ -31,8 +31,6 @@ export default class MyRouter extends React.Component {
     Menu() {
         const data = this.state.data;
         return (
-            <div>
-                {/* <section> */}
                 <ul className={classNames('m-0 p-0',Style.navigationBar)}>
                     {data.map((tmp, i) => {     
                         // Chỉ vẽ những thằng không có parent, thằng nào có parent thì về parent nó vẽ
@@ -41,9 +39,6 @@ export default class MyRouter extends React.Component {
                         }               
                     })}
                 </ul>
-            {/* </section> */}
-            </div>
-                
         );
     }
 
@@ -78,7 +73,6 @@ export default class MyRouter extends React.Component {
                     })}
                 </ul>
             </section>
-            
         </div>
         );
     }

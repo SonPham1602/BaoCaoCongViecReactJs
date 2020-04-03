@@ -1,21 +1,25 @@
 import React from 'react'
-import {Button} from 'devextreme-react/button';
-import DataGrid, {Column, Editing, Paging, Lookup } from 'devextreme-react/data-grid';
+import DataGrid, {Column, Editing, Paging } from 'devextreme-react/data-grid';
 import ReportForm from './formReport'
 import ApiService from '../../share/apiservice';
 import DownloadWord from 'html-docx-js/dist/html-docx'
 import { saveAs } from 'file-saver'
+import FontAwesome from 'react-fontawesome'
 class ViewSendReport extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       events: [],
       dataTable: null,
+      selectReportId:null,
       showViewReportPanel:false,
       dataViewReport:{
         title:'',
         content:'',
-        description:''
+        description:'',
+        createTime:'',
+        updateTime:'',
+
       }
     };
     this.logEvent = this.logEvent.bind(this);
@@ -59,10 +63,12 @@ class ViewSendReport extends React.Component {
     const reportId = event.row.data._id
     ApiService.GetReportDetailByReportId(reportId).then(req=>{
       this.setState({
+        selectReportId:reportId,
         showViewReportPanel:true,
         dataViewReport:{
           title:event.row.data.title,
-          content:req.data.reportDetail.content
+          content:req.data.reportDetail.content,
+          createTime:event.row.data.createTime
         }
       })
       console.log(req)
@@ -82,11 +88,12 @@ class ViewSendReport extends React.Component {
   downloadReport(event)
   {
     const reportId = event.row.data._id
+    const nameFile = event.row.data.title
     ApiService.GetReportDetailByReportId(reportId).then(req=>{
       console.log(req.data.reportDetail.content)
       var converted =  DownloadWord.asBlob(req.data.reportDetail.content)
       console.log(converted)
-      saveAs(converted, 'test.docx');
+      saveAs(converted, `${nameFile}.docx`);
     })
     
     console.log("Download report")
@@ -108,18 +115,29 @@ class ViewSendReport extends React.Component {
       top:'0px',
       zIndex: 1
     }
+    const ButtonCloseViewReportStyle = {
+      position: 'absolute',
+      right: '10px',
+      top: '0px',
+
+    }
 
     return (
       <div style={{position:"fixed",height:"100%",overflow: 'scroll'}}> 
         {this.state.showViewReportPanel && <div style={ViewReportStyle}>
           <div>
-            <button onClick={this.closeViewReportPanel}>Đóng</button>
+            <h3>Chi tiết báo cáo</h3>
+            <button onClick={this.closeViewReportPanel} style={ButtonCloseViewReportStyle}>
+              Đóng
+            </button>
           </div>
           <ReportForm 
             content = {this.state.dataViewReport.content}
             title = {this.state.dataViewReport.title}  
             description = {this.state.dataViewReport.description}  
             mode = 'edit'
+            updateReportId = {this.state.selectReportId}
+            reportInfo = {{createTime:this.state.dataViewReport.createTime}}
           ></ReportForm>
         </div>}
         
